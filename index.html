@@ -1,368 +1,326 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sheikh MiZan | Full Stack Web Developer in Sylhet, Bangladesh</title>
-  <meta name="description" content="Sheikh MiZan is a Full Stack Web Developer based in Sylhet, Bangladesh, with over 5 years of experience in building fast, secure, and user-friendly websites and applications." />
-  <meta name="author" content="Sheikh MiZan" />
-  <meta name="robots" content="index, follow" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sheikh MiZan | Senior Full-Stack Engineer</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            400: '#2dd4bf',
+                            500: '#14b8a6', // Teal main
+                            600: '#0d9488',
+                            900: '#134e4a',
+                            950: '#042f2e',
+                        }
+                    },
+                    animation: {
+                        'blob': 'blob 7s infinite',
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
 
-  <!-- Open Graph for social preview -->
-  <meta property="og:title" content="Sheikh MiZan | Full Stack Web Developer" />
-  <meta property="og:description" content="Building modern websites and applications from Sylhet, Bangladesh. Visit portfolio for projects and services." />
-  <meta property="og:url" content="https://sheikhmizan.com" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://sheikhmizan.com/images/og-image.jpg" />
+    <style>
+        /* Custom utilities */
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(to right, #2dd4bf, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
 
-  <!-- Favicon -->
-  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-  <!-- SEO-friendly font import -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-
+        /* Initial state for scroll animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
-<body>
+<body class="bg-slate-950 text-slate-300 font-sans antialiased selection:bg-brand-500 selection:text-white overflow-x-hidden relative">
 
-<section class="developer-profile">
-  <div class="profile-container">
-    <div class="profile-header">
-      <h1 class="profile-name">Sheikh MiZan</h1>
-      <h2 class="profile-title">Full stack web developer from Sylhet, Bangladesh</h2>
-      
-      <div class="social-links">
-        <a href="https://sheikhmizan.com" target="_blank" class="social-button website">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
-          </svg>
-          Portfolio
-        </a>
-        <a href="https://linkedin.com/in/sheikhmizan" target="_blank" class="social-button linkedin">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
-          </svg>
-          LinkedIn
-        </a>
-        <a href="https://fb.com/sheikhmizanbd" target="_blank" class="social-button facebook">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/>
-          </svg>
-          Facebook
-        </a>
-      </div>
+    <!-- Ambient Background Elements -->
+    <div class="fixed inset-0 w-full h-full z-0 overflow-hidden pointer-events-none">
+        <div class="absolute top-0 -left-4 w-72 h-72 bg-brand-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob"></div>
+        <div class="absolute top-0 -right-4 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-2000"></div>
+        <div class="absolute -bottom-8 left-20 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-4000"></div>
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')] opacity-50"></div>
     </div>
-    
 
-<div class="profile-content">
-  <section class="about-section">
-    <h3 class="section-title">Profile</h3>
-    <p class="about-text">
-      Dedicated Full Stack Web Developer with extensive experience in designing and implementing secure, scalable, and high-performance web applications. Proficient in front-end and back-end development, API integration, and cybersecurity. Adept at collaborating with cross-functional teams to deliver robust and user-friendly solutions. Strong expertise in tools and platforms like WordPress, AWS, Docker, and Joomla.
-    </p>
-  </section>
+    <div class="relative z-10">
 
-  <section class="skills-section">
-    <h3 class="section-title">Technical Skills</h3>
-    <div class="skills-grid">
-      <div class="skill-category">
-        <h4>Programming & Tools</h4>
-        <ul>
-          <li>PHP, Laravel, CakePHP, Python</li>
-          <li>MySQL, JavaScript, jQuery, TypeScript</li>
-          <li>React, HTML, CSS</li>
-          <li>API Development, RESTful Services</li>
-          <li>Security, Scalability, Performance Optimization</li>
-        </ul>
-      </div>
+        <!-- Navigation -->
+        <nav class="fixed w-full z-50 glass-panel border-b-0 border-white/5 transition-all duration-300" id="navbar">
+            <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+                <a href="#" class="text-xl font-bold tracking-tight text-white flex items-center gap-3 transition-transform hover:scale-105">
+                    <img src="https://sheikhmizan.com/wp-content/uploads/2020/11/290433464_188858123492626_429205261761149032_n-300x300.jpg" alt="Sheikh MiZan Logo" class="w-10 h-10 rounded-full border border-brand-500/30 object-cover shadow-[0_0_10px_rgba(45,212,191,0.2)]">
+                    Sheikh MiZan
+                </a>
+                <a href="#contact" class="px-5 py-2 text-sm font-medium rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-white transition-all shadow-lg hover:shadow-brand-500/20">
+                    Discuss a Project
+                </a>
+            </div>
+        </nav>
 
-      <div class="skill-category">
-        <h4>Platforms & DevOps</h4>
-        <ul>
-          <li>WordPress, Joomla, Shopify, WooCommerce</li>
-          <li>Amazon AWS, Git, Docker</li>
-        </ul>
-      </div>
+        <!-- Hero Section -->
+        <section class="min-h-screen flex items-center justify-center px-6 pt-20 pb-12">
+            <div class="max-w-4xl mx-auto text-center reveal active">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-400 text-xs font-semibold uppercase tracking-wider mb-8">
+                    <span class="relative flex h-2 w-2">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-500"></span>
+                    </span>
+                    Available for strategic partnerships
+                </div>
+                
+                <h1 class="text-5xl md:text-7xl font-bold text-white tracking-tight leading-tight mb-6">
+                    Engineering Systems That <br class="hidden md:block" />
+                    <span class="text-gradient">Scale With Growth.</span>
+                </h1>
+                
+                <p class="text-lg md:text-xl text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+                    I design and engineer high-performance web applications, SaaS platforms, and enterprise systems used by global businesses. Built for trusted delivery, steady growth, and clear business results.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="#contact" class="w-full sm:w-auto px-8 py-4 rounded-full bg-brand-600 hover:bg-brand-500 text-white font-medium transition-all transform hover:-translate-y-1 shadow-[0_0_20px_rgba(20,184,166,0.3)] flex items-center justify-center gap-2">
+                        Start a Conversation <i class="fa-solid fa-arrow-right text-sm"></i>
+                    </a>
+                    <a href="#expertise" class="w-full sm:w-auto px-8 py-4 rounded-full glass-panel hover:bg-white/5 text-white font-medium transition-all flex items-center justify-center">
+                        View Capabilities
+                    </a>
+                </div>
+            </div>
+        </section>
 
-      <div class="skill-category">
-        <h4>Soft Skills</h4>
-        <ul>
-          <li>Team Leadership, Agile, Sprint Planning</li>
-          <li>Mentorship, Conflict Resolution</li>
-          <li>Collaboration & Communication</li>
-        </ul>
-      </div>
+        <!-- Stats Divider -->
+        <section class="border-y border-white/5 bg-slate-900/50 backdrop-blur-sm reveal">
+            <div class="max-w-7xl mx-auto px-6 py-10">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-white/5">
+                    <div>
+                        <div class="text-3xl md:text-4xl font-bold text-white mb-1">10+</div>
+                        <div class="text-sm text-slate-500 font-medium uppercase tracking-wider">Years Experience</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl md:text-4xl font-bold text-white mb-1">50+</div>
+                        <div class="text-sm text-slate-500 font-medium uppercase tracking-wider">Systems Launched</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl md:text-4xl font-bold text-white mb-1">Enterprise</div>
+                        <div class="text-sm text-slate-500 font-medium uppercase tracking-wider">Level Engineering</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl md:text-4xl font-bold text-white mb-1">Global</div>
+                        <div class="text-sm text-slate-500 font-medium uppercase tracking-wider">Client Delivery</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expertise Section -->
+        <section id="expertise" class="py-24 px-6 relative">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16 reveal">
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Engineering Focus</h2>
+                    <p class="text-slate-400 max-w-2xl mx-auto">This is not a generic portfolio. It is a system designed to attract high-value projects and long-term technical partnerships.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Card 1 -->
+                    <div class="glass-panel p-8 rounded-2xl hover:bg-white/[0.03] transition-colors group reveal">
+                        <div class="w-12 h-12 rounded-lg bg-brand-500/20 flex items-center justify-center text-brand-400 mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-server text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Enterprise Web Apps</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Design and delivery of secure platforms built to handle operational complexity, stakeholder needs, and heavy growth without accruing technical debt.
+                        </p>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="glass-panel p-8 rounded-2xl hover:bg-white/[0.03] transition-colors group reveal" style="transition-delay: 100ms;">
+                        <div class="w-12 h-12 rounded-lg bg-blue-500/20 flex items-center justify-center text-blue-400 mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-layer-group text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">SaaS Platform Engineering</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Subscription platforms, dashboards, and internal tooling engineered for product-market fit, customer retention, and operational scale.
+                        </p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="glass-panel p-8 rounded-2xl hover:bg-white/[0.03] transition-colors group reveal" style="transition-delay: 200ms;">
+                        <div class="w-12 h-12 rounded-lg bg-purple-500/20 flex items-center justify-center text-purple-400 mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-database text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">API & Backend Systems</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Robust application backends, integrations, and APIs that support secure data flow, internal automation, and seamless product expansion.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 px-6 relative bg-slate-900/30 border-t border-white/5">
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-brand-900/20 pointer-events-none"></div>
+            
+            <div class="max-w-5xl mx-auto relative z-10 reveal">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-6xl font-bold text-white mb-6">Let's Build Something <span class="text-gradient">Meaningful.</span></h2>
+                    <p class="text-xl text-slate-400 max-w-2xl mx-auto">
+                        Executive-level communication, minimal friction. Reach out directly to discuss architecture, SaaS product work, or technical consulting.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    
+                    <!-- WhatsApp Direct Link Card -->
+                    <a href="https://wa.me/905338573277" target="_blank" rel="noopener noreferrer" 
+                       class="group relative overflow-hidden rounded-3xl p-8 bg-gradient-to-br from-[#128C7E]/20 to-[#075E54]/40 border border-[#25D366]/30 hover:border-[#25D366] transition-all duration-300 transform hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(37,211,102,0.2)]">
+                        
+                        <div class="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity transform group-hover:scale-110 group-hover:rotate-12 duration-500">
+                            <i class="fa-brands fa-whatsapp text-8xl text-[#25D366]"></i>
+                        </div>
+                        
+                        <div class="relative z-10 flex flex-col h-full justify-between">
+                            <div>
+                                <div class="w-14 h-14 rounded-2xl bg-[#25D366] text-white flex items-center justify-center text-2xl mb-6 shadow-lg shadow-[#25D366]/30">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold text-white mb-2">Chat on WhatsApp</h3>
+                                <p class="text-slate-300">Fastest response for project inquiries and quick scoping.</p>
+                            </div>
+                            <div class="mt-8 flex items-center text-[#25D366] font-semibold">
+                                +90 533 857 32 77
+                                <i class="fa-solid fa-arrow-right ml-2 transform group-hover:translate-x-2 transition-transform"></i>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Email Direct Link Card -->
+                    <a href="mailto:contact@sheikhmizan.com" 
+                       class="group relative overflow-hidden rounded-3xl p-8 bg-gradient-to-br from-brand-900/40 to-slate-800/80 border border-brand-500/30 hover:border-brand-400 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(45,212,191,0.15)]">
+                        
+                        <div class="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity transform group-hover:scale-110 group-hover:-rotate-12 duration-500">
+                            <i class="fa-solid fa-envelope text-8xl text-brand-400"></i>
+                        </div>
+                        
+                        <div class="relative z-10 flex flex-col h-full justify-between">
+                            <div>
+                                <div class="w-14 h-14 rounded-2xl bg-brand-500 text-white flex items-center justify-center text-2xl mb-6 shadow-lg shadow-brand-500/30">
+                                    <i class="fa-regular fa-envelope"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold text-white mb-2">Send an Email</h3>
+                                <p class="text-slate-300">Detailed briefs, RFPs, and formal consulting requests.</p>
+                            </div>
+                            <div class="mt-8 flex items-center text-brand-400 font-semibold">
+                                contact@sheikhmizan.com
+                                <i class="fa-solid fa-arrow-right ml-2 transform group-hover:translate-x-2 transition-transform"></i>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+                
+                <div class="mt-12 text-center text-sm text-slate-500">
+                    <p><i class="fa-solid fa-globe mr-2"></i> Remote delivery globally across UK, USA, Canada, and Europe.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="border-t border-white/5 py-8 bg-slate-950">
+            <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+                <div class="text-slate-500 text-sm">
+                    © 2026 Sheikh MiZan. Legal name: Shiek Md Anwar Hussain Mizan
+                </div>
+                <div class="flex gap-4 text-slate-400">
+                    <span class="text-sm">Director, Werstech Ltd</span>
+                    <span class="text-white/20">|</span>
+                    <span class="text-sm">Senior Full-Stack Engineer</span>
+                </div>
+            </div>
+        </footer>
+
     </div>
-  </section>
 
-  <section class="mission-section">
-    <h3 class="section-title">Certifications</h3>
-    <div class="about-text">
-      IBM Data Science Specialization, Google IT Support & UX Design, Advanced WordPress & PHP Development, SAS Advanced Programmer, Troubleshooting and Debugging Techniques, Crash Course on Python, Automating Real-World Tasks with Python, Introduction to Git and GitHub, Web Development Masterclass.
-    </div>
-  </section>
+    <script>
+        // Scroll Animation Logic
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        
+        window.addEventListener("scroll", reveal);
+        // Trigger once on load
+        reveal();
 
-  <section class="mission-section">
-    <h3 class="section-title">Open Source Plugins</h3>
-    <div class="about-text">
-      Auto Update Cache, Bulk Delete Users by Keyword, Bulk Add Attributes, Maintenance Plugin Pro
-    </div>
-  </section>
-
-  <section class="mission-section">
-    <h3 class="section-title">Notable Projects</h3>
-    <div class="about-text">
-      alttreatment.io, seo.mediadesignforce.website, retroarcadesolutions.com.au, sunshinemusic.net, kihobe.com, nemc.edu.bd, alsafina.org
-    </div>
-  </section>
-
-  <section class="mission-section">
-    <h3 class="section-title">Contact</h3>
-    <div class="about-text">
-      <ul>
-        <li>Email: <a href="mailto:at.mizan@hotmail.com">at.mizan@hotmail.com</a></li>
-        <li>Website: <a href="https://sheikhmizan.com" target="_blank">sheikhmizan.com</a></li>
-        <li>Phone: <a href="tel:+905338573277">+90 533 857 32 77</a></li>
-      </ul>
-    </div>
-  </section>
-
-   <div class="mission-section">
-        <h3 class="section-title">Development Approach</h3>
-        <p class="mission-text">
-          I have experience developing and maintaining web applications and websites, including creating custom plugins, themes, and integrating third-party solutions. 
-          I have also done work with database management, server maintenance and optimization. 
-          My goal is to create web applications and websites that are secure, user-friendly, and visually appealing.
-        </p>
-      </div>
-      
-</div>
-      
-     
-    </div>
-  </div>
-</section>
-
-<style>
-  :root {
-    --primary: #2563eb;
-    --primary-light: #dbeafe;
-    --secondary: #1e40af;
-    --text: #1e293b;
-    --text-light: #64748b;
-    --white: #ffffff;
-    --radius: 12px;
-    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --gap: 1.5rem;
-  }
-  
-  .developer-profile {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    color: var(--text);
-    padding: 3rem 1.5rem;
-    background-color: #f8fafc;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .profile-container {
-    background: var(--white);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    overflow: hidden;
-  }
-  
-  .profile-header {
-    padding: 2rem;
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
-    color: var(--white);
-    text-align: center;
-    position: relative;
-  }
-  
-  .profile-name {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    line-height: 1.2;
-  }
-  
-  .profile-title {
-    font-size: 1.25rem;
-    font-weight: 400;
-    opacity: 0.9;
-    margin-bottom: 1.5rem;
-  }
-  
-  .social-links {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-    margin-top: 1.5rem;
-  }
-  
-  .social-button {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.6rem 1.2rem;
-    border-radius: 50px;
-    font-weight: 500;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    font-size: 0.9rem;
-  }
-  
-  .social-button svg {
-    width: 18px;
-    height: 18px;
-  }
-  
-  .social-button.website {
-    background: rgba(255, 255, 255, 0.9);
-    color: var(--primary);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-  }
-  
-  .social-button.linkedin {
-    background: #0a66c2;
-    color: white;
-  }
-  
-  .social-button.facebook {
-    background: #1877f2;
-    color: white;
-  }
-  
-  .social-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .profile-content {
-    padding: 2rem;
-  }
-  
-  .section-title {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--primary);
-    margin-bottom: 1rem;
-    position: relative;
-    padding-bottom: 0.5rem;
-  }
-  
-  .section-title::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 50px;
-    height: 3px;
-    background: var(--primary);
-  }
-  
-  .about-text, .mission-text {
-    color: var(--text-light);
-    line-height: 1.7;
-    margin-bottom: 2rem;
-  }
-  
-  .skills-grid {
-    display: grid;
-    gap: var(--gap);
-    margin-bottom: 2rem;
-  }
-  
-  .skill-category {
-    background: var(--primary-light);
-    padding: 1.5rem;
-    border-radius: var(--radius);
-  }
-  
-  .skill-category h4 {
-    font-size: 1.125rem;
-    color: var(--secondary);
-    margin-bottom: 1rem;
-  }
-  
-  .skill-category ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .skill-category li {
-    padding: 0.5rem 0;
-    color: var(--text);
-    position: relative;
-    padding-left: 1.5rem;
-  }
-  
-  .skill-category li::before {
-    content: '▹';
-    position: absolute;
-    left: 0;
-    color: var(--primary);
-  }
-  
-  @media (min-width: 768px) {
-    .developer-profile {
-      padding: 5rem 2rem;
-    }
-    
-    .profile-name {
-      font-size: 3rem;
-    }
-    
-    .profile-title {
-      font-size: 1.5rem;
-    }
-    
-    .skills-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-    
-    .profile-header {
-      padding: 3rem 2rem;
-    }
-    
-    .profile-content {
-      padding: 3rem;
-    }
-    
-    .social-links {
-      gap: 1.5rem;
-    }
-    
-    .social-button {
-      padding: 0.8rem 1.5rem;
-      font-size: 1rem;
-    }
-    
-    .social-button svg {
-      width: 20px;
-      height: 20px;
-    }
-  }
-  
-  @media (min-width: 1024px) {
-    .profile-container {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-    }
-    
-    .profile-header {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      text-align: left;
-      padding: 2rem;
-    }
-    
-    .social-links {
-      justify-content: flex-start;
-    }
-  }
-</style>
+        // Navbar blur on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-slate-950/80', 'shadow-lg');
+                navbar.classList.remove('glass-panel');
+            } else {
+                navbar.classList.remove('bg-slate-950/80', 'shadow-lg');
+                navbar.classList.add('glass-panel');
+            }
+        });
+    </script>
 </body>
 </html>
